@@ -39,16 +39,13 @@ void print_list2(const listint_t *list, const listint_t *list2)
  * @list: double pointer to the doubly linked list (DLL)
  * Return: void
  */
-
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *sorted;
 	listint_t *unsorted;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
-	{
 		return;
-	}
 
 	sorted = NULL;
 	unsorted = *list;
@@ -64,9 +61,7 @@ void insertion_sort_list(listint_t **list)
 			current->prev = NULL;
 
 			if (sorted != NULL)
-			{
 				sorted->prev = current;
-			}
 
 			sorted = current;
 		}
@@ -75,17 +70,13 @@ void insertion_sort_list(listint_t **list)
 		{
 			listint_t *temp = sorted;
 			while (temp->next != NULL && current->n > temp->next->n)
-			{
 				temp = temp->next;
-			}
 
 			current->next = temp->next;
 			current->prev = temp;
 
 			if (temp->next != NULL)
-			{
 				temp->next->prev = current;
-			}
 
 			temp->next = current;
 		}
