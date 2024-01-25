@@ -42,7 +42,7 @@ int lomuto(int *array, int low, int high, size_t size)
 		}
 	}
 	manual_swap(&array[i + 1], &array[high]);
-	print_array(array, size);
+	/*print_array(array, size);*/
 
 	return (i + 1);
 }
